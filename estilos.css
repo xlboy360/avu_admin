@@ -1,13 +1,71 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #11998e, #38ef7d);
+    background: linear-gradient(to right, #11998e, #00A19B);
 }
 
 #login-box {
     margin-top: 70px;
     max-width: 600px;
     height: 300px;
-    box-shadow: 2px 2px 2px 2px #343434;
-    border-radius: 5px;
+    padding: 77px 55px 53px 55px;
+    box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38);
+    border-radius: 15px;
 }
+
+.focus-efecto::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 4px; /*ancho de la linea que hace el efecto de barra de progeso en el input al hacer foco*/
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    background: #6a7dfe;
+    background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+    background: -o-linear-gradient(left, #21d4fd, #b721ff);
+    background: -moz-linear-gradient(left, #21d4fd, #b721ff);
+    background: linear-gradient(left, #21d4fd, #b721ff);
+  }
+  
+  .focus-efecto::after {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.2;
+  
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    padding-left: 5px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .input100:focus + .focus-efecto::after {
+    top: -15px;
+  }
+  
+  .input100:focus + .focus-efecto::before {
+    width: 100%;
+  }
+  
+  .has-val.input100 + .focus-efecto::after {
+    top: -15px;
+  }
+  
+  .has-val.input100 + .focus-efecto::before {
+    width: 100%;
+  }

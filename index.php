@@ -27,11 +27,13 @@
                             <h3 class="text-center text-dark">Iniciar sesión</h3>
                             <div class="form-group">
                                 <label for="usuario" class="text-dark">Usuario</label>
-                                <input type="text" name="usuario" id="usuario" class="form-control">   
+                                <input type="text" name="usuario" id="usuario" class="form-control input100">
+                                <span class="focus-efecto"></span>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-dark">Contraseña</label>
-                                <input type="password" name="password" id="password" class="form-control mb-2" >   
+                                <input type="password" name="password" id="password" class="form-control mb-2 input100" >   
+                                <span class="focus-efecto"></span>
                             </div>
                             <div class="form-group text-center d-grid gap-2" >
                                 <input type="submit" name="submit" class="btn-outline-success btn-lg my-4" value="Iniciar">
