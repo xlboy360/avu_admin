@@ -13,7 +13,8 @@ $consulta = "SELECT * FROM administrador WHERE usuario='$usuario' AND contrasena
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 
-if($resultado->num_rows() >= 1){
+if($resultado->rowCount() >= 1){
+    $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION["s_usuario"] = $usuario;
 }else{
     $_SESSION["s_usuario"] = null;
