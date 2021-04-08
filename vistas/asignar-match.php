@@ -6,10 +6,6 @@ if ($_SESSION["s_usuario"] === "null") {
 }
 ?>
 
-<?php 
-    require_once "./navbar.php";
-    require_once "../dashboard/dashboard.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
