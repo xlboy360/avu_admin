@@ -35,13 +35,12 @@ $('#form-login').submit(function (e) {
                 }else{
                     Swal.fire({
                         type:'success',
-                        title:'¡Conexión exitosa!' + data,
+                        title:'¡Conexión exitosa!',
                         confirmButtonColor:'#3085d6',
-                        confirmButtonText:'Ingresar'
+                        confirmButtonText:'Ingresado correctamente'
                     }).then((result) => {
                         if(result.value){
-                            window.location.href = "vistas/pag_inicio.php";
-                            // window.location.href = "dashboard/index.php";
+                            window.location.href = "vistas/asignar-match.php";
                         }
                     })
                     
