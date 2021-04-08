@@ -19,7 +19,7 @@
 
     <div class="container-login">
         <div class="wrap-login">
-            <form class="login-form validate-form" id="formLogin" action="" method="post">
+            <form class="login-form validate-form" id="form-login" action="" method="post">
                 <img src="./img/logo.jpeg" alt="" width="300">
                 
                 <div class="wrap-input100" data-validate = "Usuario incorrecto">
