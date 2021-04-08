@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel ="shortcut icon" href="#" />
-        <meta charset="utf-8">
-        <meta name="viewport" content="width-devide-width, initial-scale-1, shrink-to-fit-no">
 
-        <title>LogIn</title>
+<head>
+    <link rel="shortcut icon" href="#" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-devide-width, initial-scale-1, shrink-to-fit-no">
 
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
-        
-    </head>
+    <title>LogIn</title>
 
-    <body >
-        <div class="login">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
 
-            <h3 class="text-center text-light display-4 mt-5">AVU Conecta</h3>
+</head>
 
-            <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12 bg-light text-dark px-4 py-2">
+<body>
+    <div class="login">
 
-                        <form id="form-login" class="form" action="" method="POST">
-                            <h3 class="text-center text-dark">Iniciar sesión</h3>
-                            <div class="form-group">
-                                <label for="usuario" class="text-dark">Usuario</label>
-                                <input type="text" name="usuario" id="usuario" class="form-control input100">
-                                <span class="focus-efecto"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-dark">Contraseña</label>
-                                <input type="password" name="password" id="password" class="form-control mb-2 input100" >   
-                                <span class="focus-efecto"></span>
-                            </div>
-                            <div class="form-group text-center d-grid gap-2" >
-                                <input type="submit" name="submit" class="btn-outline-success btn-lg my-4" value="Iniciar">
-                            </div>
-                        </form>
-
-                        </div>
+    <div class="container-login">
+        <div class="wrap-login">
+            <form class="login-form validate-form" id="formLogin" action="" method="post">
+                <img src="./img/logo.jpeg" alt="" width="300">
+                
+                <div class="wrap-input100" data-validate = "Usuario incorrecto">
+                    <input class="input100" type="text" id="usuario" name="usuario" placeholder="Usuario">
+                    <span class="focus-efecto"></span>
+                </div>
+                
+                <div class="wrap-input100" data-validate="Password incorrecto">
+                    <input class="input100" type="password" id="password" name="password" placeholder="Password">
+                    <span class="focus-efecto"></span>
+                </div>
+                
+                <div class="container-login-form-btn">
+                    <div class="wrap-login-form-btn">
+                        <div class="login-form-bgbtn"></div>
+                        <button type="submit" name="submit" class="login-form-btn">CONECTAR</button>
                     </div>
                 </div>
-            </div>
-
+            </form>
         </div>
-        
-        <script src="jquery/jquery-3.6.0.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="popper/popper.min.js"></script>
-        <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
-        <script src="codigo.js"></script>
 
-    </body>
-    
+    </div>
+
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="codigo.js"></script>
+
+</body>
+
 </html>
