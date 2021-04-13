@@ -35,7 +35,7 @@
                 <div class="container-login-form-btn">
                     <div class="wrap-login-form-btn">
                         <div class="login-form-bgbtn"></div>
-                        <button type="submit" name="submit" class="login-form-btn">CONECTAR</button>
+                        <button type="submit" name="submit" class="login-form-btn">Ingresar</button>
                     </div>
                 </div>
             </form>

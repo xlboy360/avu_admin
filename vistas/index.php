@@ -36,7 +36,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <!-- Graficación -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
-                <canvas id="myChart" width="400px" height="400px"></canvas>
+                <canvas id="myChart" width="800px" height="400px"></canvas>
                 <script>
                     var ctx = document.getElementById('myChart').getContext('2d');
                     var myChart = new Chart(ctx, {

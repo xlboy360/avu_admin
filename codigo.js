@@ -42,8 +42,7 @@ $('#form-login').submit(function (e) {
                         if(result.value){
                             window.location.href = "vistas/index.php";
                         }
-                    })
-                    
+                    });
                 }
             }    
          });
