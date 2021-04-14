@@ -34,49 +34,87 @@ if ($_SESSION["s_usuario"] === "null") {
         </div>
 
         <!-- Graficación -->
-        <div class="row justify-content-md-center p-4">
+        <div class="row justify-content-md-center p-4" >
             <div class="col-md-auto">
-                <canvas id="myChart" width="800px" height="400px"></canvas>
-                <script>
-                    var ctx = document.getElementById('myChart').getContext('2d');
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Actividad 1', 'Actividad 2', 'Actividad 3', 'Actividad 4', 'Actividad 5', 'Actividad 6'],
-                            datasets: [{
-                                    label: 'Actividades realizadas',
-                                    data: [8],
-                                    backgroundColor:
-                                        // Color verde
-                                        'rgba(75, 192, 192, 0.2)',
-                                    borderColor: 'rgba(75, 192, 192, 1)',
-                                    borderWidth: 1
-                                },
-                                {
-                                    label: 'Actividades por realizar',
-                                    data: [2],
-                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                    borderColor: 'rgba(255, 99, 132, 1)',
-                                    borderWidth: 1
-                                }
-                            ]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    });
 
+                <canvas id="myChart" width="800px" height="400px"></canvas>
+                <!-- <button onclick=cargarDatosGrafica()></button> -->
+                <script>
+                    // Función para cargar los datos de la BD a la gráfica
                     function cargarDatosGrafica() {
                         $.ajax({
-                            url:'../bd/controlador_grafico.php',
-                            type:'POST'
-                        }).done(function(resp){
-                            alert(resp);
+                            url: '../bd/controlador_grafico.php',
+                            type: 'POST'
+                        }).done(function(resp) {
+                            // Variables para los titulos y su contenido
+                            var cantidadSi = [];
+                            var cantidadNo = [];
+
+                            var contadorSi = 0;
+                            var contadorNoo = 0;
+
+                            var dataContenido = JSON.parse(resp);
+
+                            titulos1 = cargarTitulosGrafica();
+                            // For para recorrer los elementos de la tabala
+                            for (var i = 0; i < dataContenido.length; i++) {
+                                if (dataContenido[i][3] == "si") {
+                                    contadorSi++;
+                                }
+                                if (dataContenido[i][3] == "no") {
+                                    contadorNo++;
+                                }
+                                cantidadSi[i] = contadorSi;
+                                cantidadNo[i] = cantidadNo;
+                            }
+
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: titulos1,
+                                    datasets: [{
+                                            label: 'Actividades realizadas',
+                                            data: cantidadSi,
+                                            backgroundColor:
+                                                // Color verde
+                                                'rgba(75, 192, 192, 0.2)',
+                                            borderColor: 'rgba(75, 192, 192, 1)',
+                                            borderWidth: 1
+                                        },
+                                        {
+                                            label: 'Actividades por realizar',
+                                            data: cantidadNo,
+                                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                            borderColor: 'rgba(255, 99, 132, 1)',
+                                            borderWidth: 1
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+
                         })
+                    }
+
+                    function cargarTitulosGrafica() {
+                        var titulos = [];
+                        $.ajax({
+                            url: '../bd/controlador_grafico_titulos.php',
+                            type: 'POST'
+                        }).done(function(resp) {
+                            var data = JSON.parse(resp);
+                            for (var i = 0; i < data.length; i++) {
+                                titulos.push(data[i][1]);
+                            }
+                        });
+                        return titulos;
                     }
                 </script>
             </div>
@@ -174,6 +212,7 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <script>
+    window.onpageshow = cargarDatosGrafica()
     $(document).ready(function() {
         $('#example').DataTable({
             language: {

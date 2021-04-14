@@ -10,8 +10,7 @@ $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
 $password = (isset($_POST['password'])) ? $_POST['password'] : '';
 
 $consulta = "SELECT * FROM administrador WHERE usuario='$usuario' AND contrasena='$password' ";
-$resultado = $conexion->prepare($consulta);
-$resultado->execute();
+$resultado = $this->conexion->conexion->query($consulta);
 
 if($resultado->rowCount() >= 1){
     $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
