@@ -52,7 +52,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>System Architect</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +60,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Junior Technical Author</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +68,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Senior Javascript Developer</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Accountant</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -84,7 +84,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Integration Specialist</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -92,7 +92,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Sales Assistant</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -100,7 +100,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Integration Specialist</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -108,15 +108,43 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Javascript Developer</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
             </div>            
         </div>
+    
+    <!--Modals-->
+        <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+    </button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
     </div>
+    </div>
+    <!--Termina modals-->
+
+    </div>   
 </body>
 </html>
 <!-- FIN DEL CONTENIDO PRINCIPAL -->
