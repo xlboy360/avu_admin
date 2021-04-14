@@ -1,27 +1,15 @@
 <?php
  class Conexion{
 
-    private $servidor;
-    private $usuario;
-    private $contrasena;
-    private $basedatos;
     public $conexion;
 
-    public function __construct()
-    {
-        $this->servidor = "localhost";
-        $this->usuario = "root";
-        $this->contrasena = "";
-        $this->basedatos = "id16169015_avuconecta";
+    function Conectar(){
+        $conexion = new mysqli("localhost","root", "", "id16169015_avuconecta");
+        $conexion->set_charset("utf8");        
     }
     
-    function Conectar(){
-        $this->conexion = new mysqli($this->servidor,$this->usuario, $this->contrasena, $this->basedatos);
-        $this->conexion->set_charset("utf8");         
-    }
-
     function cerrar() {
-        $this->conexion->close();
+        $conexion->close();
     }
 
  }

@@ -99,7 +99,6 @@ if ($_SESSION["s_usuario"] === "null") {
                                     }
                                 }
                             });
-
                         })
                     }
 
@@ -212,7 +211,7 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <script>
-    window.onpageshow = cargarDatosGrafica()
+    window.onload = cargarDatosGrafica()
     $(document).ready(function() {
         $('#example').DataTable({
             language: {
