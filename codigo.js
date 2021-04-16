@@ -4,9 +4,7 @@ $('#form-login').submit(function (e) {
     var usuario = $.trim($("#usuario").val());
     var password = $.trim($("#password").val());
 
-    console.log(usuario)
-    console.log(password)
-
+    
     if (usuario.length == 0) {
         Swal.fire({
             icon: "warning",
@@ -26,8 +24,9 @@ $('#form-login').submit(function (e) {
             type:"POST",
             datatype: "json",
             data: {usuario:usuario, password:password}, 
-            success:function(data){               
-                if(data == "null"){
+            success:function(data){    
+                console.log(data);           
+                if(data === "null"){
                     Swal.fire({
                         icon:'error',
                         title:'Usuario y/o password incorrecta',
@@ -40,7 +39,7 @@ $('#form-login').submit(function (e) {
                         confirmButtonText:'Ingresado correctamente'
                     }).then((result) => {
                         if(result.value){
-                            window.location.href = "vistas/index.php";
+                            window.location.href = "./vistas/index.php";
                         }
                     });
                 }
