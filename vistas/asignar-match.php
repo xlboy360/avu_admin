@@ -17,6 +17,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
 </head>
 <body>
     <div class="content-fluid">
@@ -52,7 +53,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>System Architect</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Agregar</button>
+                        <button type="button" class="btn btn-success" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +61,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Junior Technical Author</td>
                         <td>
                         <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
+                        <button type="button" class="btn btn-success agregar" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -75,8 +76,8 @@ if ($_SESSION["s_usuario"] === "null") {
                         <td>Airi Satou</td>
                         <td>Accountant</td>
                         <td>
-                        <button type="button" class="btn btn-warning">Editar</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
+                        <button type="button" class="btn btn-warning"  >Editar</button>
+                        <button type="button" class="btn btn-success agregar" data-toggle="modal" data-target="#asignar-match">Agregar</button>
                         </td>
                     </tr>
                     <tr>
@@ -185,3 +186,8 @@ $(document).ready(function () {
             });
         });
 </script>
+
+    <script src="../popper/popper.min.js"></script>
+    <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    
+    <script src="funcion.js"></script>
