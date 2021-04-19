@@ -4,12 +4,12 @@
     public $conexion;
 
     function Conectar(){
-        $conexion = new mysqli_connect("localhost","root", "", "id16169015_avuconecta");
-        $conexion->set_charset("utf8");        
+        $this->conexion = new mysqli("localhost","root", "", "id16169015_avuconecta");
+        $this->conexion->set_charset("utf8");        
     }
     
     function cerrar() {
-        $conexion->close();
+        $this->conexion->close();
     }
 
  }

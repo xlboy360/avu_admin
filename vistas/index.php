@@ -37,7 +37,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <div class="row justify-content-md-center p-4" >
             <div class="col-md-auto">
 
-                <canvas id="myChart" width="800px" height="400px"></canvas>
+                <canvas id="myChart" width="1000px" height="400px"></canvas>
                 <!-- <button onclick=cargarDatosGrafica()></button> -->
                 <script>
                     // Función para cargar los datos de la BD a la gráfica
@@ -54,7 +54,7 @@ if ($_SESSION["s_usuario"] === "null") {
                             var contadorNoo = 0;
 
                             var dataContenido = JSON.parse(resp);
-
+                            
                             titulos1 = cargarTitulosGrafica();
                             // For para recorrer los elementos de la tabala
                             for (var i = 0; i < dataContenido.length; i++) {
@@ -211,7 +211,7 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <script>
-    window.onload = cargarDatosGrafica()
+     window.onload = cargarDatosGrafica()
     $(document).ready(function() {
         $('#example').DataTable({
             language: {
