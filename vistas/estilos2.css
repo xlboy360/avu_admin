@@ -1,0 +1,21 @@
+/* Botones */
+#consultar, #btn0{
+    background-color: #00A19B;
+}
+#consultar:hover, #btn0:hover{
+    background-color: #037e7a;
+}
+
+#edibtn{
+    background-color: #8E65A8;
+    color: #fff;
+    border-color: #8E65A8;
+}
+
+#edibtn:hover{
+    background-color: #7c5892;
+}
+
+#example{
+    border: solid 1px #8E65A8;
+}

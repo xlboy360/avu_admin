@@ -18,8 +18,8 @@ if ($_SESSION["s_usuario"] === "null") {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
-
-
+    <link rel="stylesheet" href="estilos2.css">
+    
     <!-- Script necesario para las gráficas -->
     <script src="../chartjs/chart.min.js"></script>
 </head>
@@ -31,7 +31,7 @@ if ($_SESSION["s_usuario"] === "null") {
             <div class="col-md-auto"><input class="form-control" type="text" placeholder="Id Match"></div>
             <div class="col-md-auto"><input class="form-control" type="text" placeholder="Empresa"></div>
             <div class="col-md-auto"><input class="form-control" type="text" placeholder="Coordinador"></div>
-            <div class="col-md-auto"><button type="submit" class="btn btn-primary">Consultar</button></div>
+            <div class="col-md-auto"><button type="submit" class="btn btn-primary" id="consultar">Consultar</button></div>
         </div>
 
         <!-- Graficación -->
@@ -122,12 +122,6 @@ if ($_SESSION["s_usuario"] === "null") {
                         </tr>
                     </thead>
                     <tbody>
-                        <!--Aqui va el codigo para consultar la bd con php
-                        SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, a.ID_COORDINADOR, d.empresa
-                        FROM mtch a INNER JOIN pam b ON a.Id_pam = b.Id_PAM INNER JOIN
-                        voluntario c ON a.Id_voluntario = c.Id_voluntario INNER JOIN
-                        empresa d ON c.Id_empresas = d.Id_empresas
-                        -->
                     <?php
                         $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
                         $res=mysqli_query ($con,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, a.ID_COORDINADOR, d.empresa
@@ -142,7 +136,7 @@ if ($_SESSION["s_usuario"] === "null") {
                                 <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
                                 <td>'.$rec["ID_COORDINADOR"].'</td>
                                 <td>'.$rec["empresa"].'</td>
-                                <td><button type="button" class="btn btn-warning">Editar</button>
+                                <td><button type="button" class="btn btn-warning" id="edibtn">Editar</button>
                                 <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
                             </tr>';
                         }
@@ -198,6 +192,3 @@ if ($_SESSION["s_usuario"] === "null") {
         });
     });
 </script>
-
-
-<?php require_once "./parte_inferior.php" ?>

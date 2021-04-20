@@ -19,6 +19,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="estilos2.css">
 </head>
 
 <body>
@@ -192,14 +193,9 @@ if ($_SESSION["s_usuario"] === "null") {
                         <tr>
                             <th>Coordinador</th>
                             <th>Match asignados</th>
-                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!--Aqui va el codigo para consultar la bd con php
-                select ID_COORDINADOR, count(ID_COORDINADOR) as total
-                from mtch
-                -->
                     <?php
                         $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
                         $res=mysqli_query ($con,"select ID_COORDINADOR, count(ID_COORDINADOR) as total
@@ -209,7 +205,7 @@ if ($_SESSION["s_usuario"] === "null") {
                             echo'<tr>
                                 <td>'.$rec["ID_COORDINADOR"].'</td>
                                 <td>'.$rec["total"].'</td>
-                                <td><button type="button" class="btn btn-warning">Editar</button>
+                                <td><button type="button" class="btn btn-warning" id="edibtn">Editar</button>
                                 <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
                             </tr>';
                         }

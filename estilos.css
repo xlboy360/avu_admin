@@ -30,8 +30,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: -webkit-linear-gradient(to right, #00dbde, #00A19B);
-  background: linear-gradient(to right, #00dbde, #00A19B);
+  background: -webkit-linear-gradient(to right, #00A19B, #00A19B);
+  background: linear-gradient(to right, #00A19B, #00A19B);
 }
 
 .wrap-login {
@@ -244,3 +244,4 @@ button:hover {
   right: 0;
   left: auto;
 }
+
