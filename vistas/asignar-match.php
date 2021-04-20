@@ -201,73 +201,23 @@ if ($_SESSION["s_usuario"] === "null") {
                 select ID_COORDINADOR, count(ID_COORDINADOR) as total
                 from mtch
                 -->
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success agregar" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                            <td>Accountant</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success agregar" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                            <td>Sales Assistant</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                            <td>Integration Specialist</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                            <td>Javascript Developer</td>
-                            <td>
-                                <button type="button" class="btn btn-warning">Editar</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#asignar-match">Agregar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <?php
+                        $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
+                        $res=mysqli_query ($con,"select ID_COORDINADOR, count(ID_COORDINADOR) as total
+                        from mtch");
+                        while($rec=mysqli_fetch_array($res))
+                        {
+                            echo'<tr>
+                                <td>'.$rec["ID_COORDINADOR"].'</td>
+                                <td>'.$rec["total"].'</td>
+                                <td><button type="button" class="btn btn-warning">Editar</button>
+                                <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
+                            </tr>';
+                        }
+                    ?>
+                </tbody>
+            </table>
+            </div>            
         </div>
 
         <!--Modals-->
