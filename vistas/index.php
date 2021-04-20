@@ -18,7 +18,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
-    
+
 
     <!-- Script necesario para las gráficas -->
     <script src="../chartjs/chart.min.js"></script>
@@ -35,7 +35,7 @@ if ($_SESSION["s_usuario"] === "null") {
         </div>
 
         <!-- Graficación -->
-        <div class="row justify-content-md-center p-4" >
+        <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
 
                 <canvas id="myChart" width="1000px" height="400px"></canvas>
@@ -55,8 +55,10 @@ if ($_SESSION["s_usuario"] === "null") {
                             var contadorNoo = 0;
 
                             var dataContenido = JSON.parse(resp);
-                            
-                            titulos1 = cargarTitulosGrafica();
+
+                            var titulos1 = [];
+                            for (let i = 0; i < 30; i++)
+                                titulos1[i] = i + 1
                             // For para recorrer los elementos de la tabala
                             for (var i = 0; i < dataContenido.length; i++) {
                                 if (dataContenido[i][3] == "si") {
@@ -101,20 +103,6 @@ if ($_SESSION["s_usuario"] === "null") {
                                 }
                             });
                         })
-                    }
-
-                    function cargarTitulosGrafica() {
-                        var titulos = [];
-                        $.ajax({
-                            url: '../bd/controlador_grafico_titulos.php',
-                            type: 'POST'
-                        }).done(function(resp) {
-                            var data = JSON.parse(resp);
-                            for (var i = 0; i < data.length; i++) {
-                                titulos.push(data[i][1]);
-                            }
-                        });
-                        return titulos;
                     }
                 </script>
             </div>
@@ -212,7 +200,7 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <script>
-     window.onload = cargarDatosGrafica()
+    cargarDatosGrafica()
     $(document).ready(function() {
         $('#example').DataTable({
             language: {
@@ -248,5 +236,5 @@ if ($_SESSION["s_usuario"] === "null") {
     });
 </script>
 
-   
+
 <?php require_once "./parte_inferior.php" ?>

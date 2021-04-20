@@ -19,8 +19,28 @@
             return $arreglo;
         }
 
-        function TraerTitulosGraficoBar(){
-            $consulta = "SELECT * FROM actividad";
+        function TraerDatosGraficoPieActivacion1(){
+            $consulta = "SELECT * FROM voluntario WHERE Id_empresas = 1";
+            $arreglo = array();
+            if($consulta = $this->conexion->conexion->query($consulta)){ 
+                while($consulta_VU = mysqli_fetch_array($consulta))
+                    $arreglo[] = $consulta_VU;
+            }
+            return $arreglo;
+        }
+
+        function TraerDatosGraficoPieActivacion2(){
+            $consulta = "SELECT * FROM voluntario WHERE Id_empresas = 2";
+            $arreglo = array();
+            if($consulta = $this->conexion->conexion->query($consulta)){ 
+                while($consulta_VU = mysqli_fetch_array($consulta))
+                    $arreglo[] = $consulta_VU;
+            }
+            return $arreglo;
+        }
+
+        function TraerDatosGraficoPieActivacion3(){
+            $consulta = "SELECT * FROM voluntario WHERE Id_empresas = 3";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
