@@ -28,8 +28,6 @@ if ($_SESSION["s_usuario"] === null) {
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="estilos2.css">
-
 </head>
 
 <body id="page-top">
@@ -38,7 +36,7 @@ if ($_SESSION["s_usuario"] === null) {
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#00A19B">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">

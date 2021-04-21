@@ -31,7 +31,7 @@ button:hover {
   align-items: center;
   padding: 15px;
   background: -webkit-linear-gradient(to right, #00A19B, #00A19B);
-  background: linear-gradient(to right, #00A19B, #00A19B);
+  background: linear-gradient(to right, #8E65A8, #8E65A8);
 }
 
 .wrap-login {
@@ -98,11 +98,11 @@ button:hover {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  background: -o-linear-gradient(left, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  background: linear-gradient(left, #21d4fd, #b721ff);
+  background: #8E65A8;
+  background: -webkit-linear-gradient(left, #00A19B, #8E65A8);
+  background: -o-linear-gradient(left, #00A19B, #8E65A8);
+  background: -moz-linear-gradient(left, #00A19B, #8E65A8);
+  background: linear-gradient(left, #00A19B, #8E65A8);
 }
 
 .focus-efecto::after {
@@ -173,10 +173,10 @@ button:hover {
   width: 300%;
   height: 100%;
   background: #a64bf4;
-  background: -webkit-linear-gradient(right, #56d3cc, #eed5f8, #56d3cc, #eed5f8);
-  background: -o-linear-gradient(right, #56d3cc, #eed5f8, #56d3cc, #eed5f8);
-  background: -moz-linear-gradient(right, #56d3cc, #eed5f8, #56d3cc, #eed5f8);
-  background: linear-gradient(right, #56d3cc, #eed5f8, #56d3cc, #eed5f8);
+  background: -webkit-linear-gradient(right, #8E65A8, #8E65A8, #8E65A8, #8E65A8);
+  background: -o-linear-gradient(right, #8E65A8, #8E65A8, #8E65A8, #8E65A8);
+  background: -moz-linear-gradient(right, #8E65A8, #8E65A8, #8E65A8, #8E65A8);
+  background: linear-gradient(right, #8E65A8, #8E65A8, #8E65A8, #8E65A8);
   top: 0;
   left: -100%;
 
@@ -189,7 +189,7 @@ button:hover {
 .login-form-btn {
   font-family: Poppins-Medium;
   font-size: 20px;
-  color: white;
+  color: #8E65A8;
   line-height: 1.2;
   text-transform: uppercase;
 
