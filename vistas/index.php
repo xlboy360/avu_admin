@@ -2,7 +2,7 @@
 // Hace una validación de que ehaya un usuario en sesión.
 session_start();
 if ($_SESSION["s_usuario"] === "null") {
-    header("Location: ../log-in.php");
+    header("Location: ../index.php");
 }
 ?>
 <?php require_once "./parte_superior.php" ?>
