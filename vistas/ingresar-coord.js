@@ -1,4 +1,4 @@
-$('#form-login').submit(function (e) {
+$('#form-login-coord').submit(function (e) {
     e.preventDefault();
 
     var usuario = $.trim($("#usuario").val());
@@ -20,12 +20,11 @@ $('#form-login').submit(function (e) {
     } else {
         //Por medio de AJAX se actualiza el envío de datos y se envía a otro archivo una vez verificadas las credenciales
         $.ajax({
-            url:"bd/login-admin.php",
+            url:"../bd/login-coord.php",
             type:"POST",
             datatype: "json",
             data: {usuario:usuario, password:password}, 
-            success:function(data){    
-                console.log(data);           
+            success:function(data){          
                 if(data === "null"){
                     Swal.fire({
                         icon:'error',
@@ -39,7 +38,7 @@ $('#form-login').submit(function (e) {
                         confirmButtonText:'Ingresado correctamente'
                     }).then((result) => {
                         if(result.value){
-                            window.location.href = "./vistas/index.php";
+                            window.location.href = "./vista-coordinador.php";
                         }
                     });
                 }
