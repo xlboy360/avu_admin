@@ -199,7 +199,8 @@ if ($_SESSION["s_usuario"] === "null") {
                     <?php
                         $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
                         $res=mysqli_query ($con,"select ID_COORDINADOR, count(ID_COORDINADOR) as total
-                        from mtch");
+                        from mtch
+                        group by ID_COORDINADOR");
                         while($rec=mysqli_fetch_array($res))
                         {
                             echo'<tr>
