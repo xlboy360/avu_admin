@@ -140,8 +140,6 @@ if ($_SESSION["s_usuario"] === "null") {
                                 <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
                                 <td>'.$rec["NOMBRE"].'</td>
                                 <td>'.$rec["empresa"].'</td>
-                                <td><button type="button" class="btn btn-warning" id="edibtn">Editar</button>
-                                <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
                             </tr>';
                         }
                     ?>
