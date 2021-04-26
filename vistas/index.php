@@ -39,7 +39,7 @@ if ($_SESSION["s_usuario"] === "null") {
             <div class="col-md-auto">
 
                 <canvas id="myChart" width="1000px" height="400px"></canvas>
-                <!-- <button onclick=cargarDatosGrafica()></button> -->
+                <!-- Gráfica de barras para los totales de actividades realziadas y las que no -->
                 <script>
                     // Función para cargar los datos de la BD a la gráfica
                     function cargarDatosGrafica() {
@@ -136,8 +136,6 @@ if ($_SESSION["s_usuario"] === "null") {
                                 <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
                                 <td>'.$rec["ID_COORDINADOR"].'</td>
                                 <td>'.$rec["empresa"].'</td>
-                                <td><button type="button" class="btn btn-warning" id="edibtn">Editar</button>
-                                <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
                             </tr>';
                         }
                     ?>
