@@ -9,7 +9,7 @@ $empresa=(isset($_POST['empresa'])) ? $_POST['empresa'] : '';
  
 
 
-$consulta = "CALL AsignarCoordinador($cantidad,$id);";
+$consulta = "CALL AsignarCoordinador($cantidad,$id,$empresa);";
 
 
 $resultado=mysqli_query($conexion,$consulta);
