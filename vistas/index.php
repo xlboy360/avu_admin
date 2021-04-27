@@ -108,7 +108,7 @@ if ($_SESSION["s_usuario"] === "null") {
             </div>
         </div>
 
-        <!-- Paginación -->
+        <!-- Paginación  -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -122,6 +122,13 @@ if ($_SESSION["s_usuario"] === "null") {
                         </tr>
                     </thead>
                     <tbody>
+
+                        <!--Aqui va el codigo para consultar la bd con php
+                        SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, a.ID_COORDINADOR, d.empresa
+                        FROM mtch a INNER JOIN pam b ON a.Id_pam = b.Id_PAM INNER JOIN
+                        voluntario c ON a.Id_voluntario = c.Id_voluntario INNER JOIN
+                        empresa d ON c.Id_empresas = d.Id_empresas-->
+
                     <?php
                         $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
                         $res=mysqli_query ($con,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, a.ID_COORDINADOR, d.empresa
@@ -136,13 +143,11 @@ if ($_SESSION["s_usuario"] === "null") {
                                 <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
                                 <td>'.$rec["ID_COORDINADOR"].'</td>
                                 <td>'.$rec["empresa"].'</td>
-                                <td><button type="button" class="btn btn-warning" id="edibtn">Editar</button>
-                                <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
-                            </tr>';
+                                </tr>';
                         }
                     ?>
                     </tbody>
-                </table>
+                </table> 
             </div>
         </div>
 

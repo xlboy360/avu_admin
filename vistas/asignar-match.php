@@ -206,8 +206,10 @@ if ($_SESSION["s_usuario"] === "null") {
                             echo'<tr>
                                 <td>'.$rec["ID_COORDINADOR"].'</td>
                                 <td>'.$rec["total"].'</td>
-                                <td><button type="button" class="btn btn-warning" id="edibtn">Editar</button>
-                                <button type="button" class="btn btn-success agregar" id="btn0" data-toggle="modal" data-target="#exampleModal">Agregar</button></td>
+
+                              <td>  <!-- <button type="button" class="btn btn-warning">Editar</button> -->
+                                <button type="button" class="btn btn-success agregar"  value="'.$rec["ID_COORDINADOR"].'" onclick="identidad ('.$rec["ID_COORDINADOR"].')" >Agregar</button></td>
+
                             </tr>';
                         }
                     ?>
