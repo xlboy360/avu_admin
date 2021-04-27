@@ -60,7 +60,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
                     // For para recorrer los elementos de la tabala
                     for (var i = 0; i < dataContenido.length; i++) {
-                        if (dataContenido[i][8] != 0 && dataContenido[i][8] != null) {
+                        if (dataContenido[i][0] != 0 && dataContenido[i][0] != null) {
                             contadorSi++;
                         } else {
                             contadorNo++;
@@ -96,7 +96,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
                     // For para recorrer los elementos de la tabala
                     for (var i = 0; i < dataContenido.length; i++) {
-                        if (dataContenido[i][8] != 0 && dataContenido[i][8] != null) {
+                        if (dataContenido[i][0] != 0 && dataContenido[i][0] != null) {
                             contadorSi++;
                         } else {
                             contadorNo++;
@@ -132,7 +132,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
                     // For para recorrer los elementos de la tabala
                     for (var i = 0; i < dataContenido.length; i++) {
-                        if (dataContenido[i][8] != 0 && dataContenido[i][8] != null) {
+                        if (dataContenido[i][0] != 0 && dataContenido[i][0] != null) {
                             contadorSi++;
                         } else {
                             contadorNo++;
