@@ -9,7 +9,8 @@
         }
 
         function TraerDatosGraficoBar(){
-            $consulta = "SELECT Id_match, R.Id_actividad, nombre_actividad, realizo_actividad FROM registro_actividad as R INNER JOIN actividad as A ON A.Id_actividad = R.Id_actividad";
+            $consulta = "SELECT Id_match, R.Id_actividad, nombre_actividad, realizo_actividad FROM registro_actividad as R 
+                INNER JOIN actividad as A ON A.Id_actividad = R.Id_actividad";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -18,11 +19,11 @@
             return $arreglo;
         }
 
-        function TraerDatosGraficoBarCoordinador(){
+        function TraerDatosGraficoBarCoordinador($usuario){
             $consulta = "SELECT R.Id_match, R.Id_actividad, nombre_actividad, realizo_actividad FROM registro_actividad as R 
                 INNER JOIN actividad as A ON A.Id_actividad = R.Id_actividad 
                 INNER JOIN mtch AS M ON M.Id_match =R.Id_match 
-                INNER JOIN coordinador as C ON c.ID = M.ID_COORDINADOR WHERE C.USUARIO = '$this->usuario' ";
+                INNER JOIN coordinador as C ON c.ID = M.ID_COORDINADOR WHERE C.USUARIO = '$usuario' ";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))

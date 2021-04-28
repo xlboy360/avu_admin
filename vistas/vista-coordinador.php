@@ -45,7 +45,8 @@ if ($_SESSION["s_usuario"] === "null") {
                     function cargarDatosGrafica() {
                         $.ajax({
                             url: '../bd/controlador_grafico_barras_coordinador.php',
-                            type: 'POST'
+                            type: 'POST',
+                            data: {usuario:`<?php echo $_SESSION["s_usuario"]; ?>`}
                         }).done(function(resp) {
                             // Variables para los titulos y su contenido
                             console.log(resp)
