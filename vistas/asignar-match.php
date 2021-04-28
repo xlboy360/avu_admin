@@ -100,7 +100,6 @@ if ($_SESSION["s_usuario"] === "null") {
                             contadorSi++;
                         } else {
                             contadorNo++;
-
                         }
                     }
 

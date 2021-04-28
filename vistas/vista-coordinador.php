@@ -5,7 +5,7 @@ if ($_SESSION["s_usuario"] === "null") {
     header("Location: ../index.php");
 }
 ?>
-<?php require_once "./parte_superior.php" ?>
+<?php require_once "./parte_superior_coord.php" ?>
 <!-- INICIO CONTENIDO PRINCIPAL -->
 <!DOCTYPE html>
 <html lang="en">

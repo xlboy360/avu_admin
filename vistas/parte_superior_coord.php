@@ -54,13 +54,6 @@ if ($_SESSION["s_usuario"] === null) {
                 MENU
             </div>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="asignar-match.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Configuración</span></a>
-            </li>
-
         </ul>
         <!-- End of Sidebar -->
 
