@@ -21,7 +21,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <form action="">
+                <form class="formulario-agregar-admin" action="">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nombre del coordinador</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
@@ -38,7 +38,9 @@ if ($_SESSION["s_usuario"] === "null") {
                         <label for="exampleInputEmail1">Repetir contraseña</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
-                    <button id="agregar-btn" type="submit" class="btn btn-primary">Agregar</button>
+                    <div class="form-group" style="text-align:center;">                        
+                        <button id="agregar-btn" type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
                 </form>
             </div>
         </div>
