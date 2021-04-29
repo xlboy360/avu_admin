@@ -131,17 +131,19 @@ if ($_SESSION["s_usuario"] === "null") {
 
                     <?php
                         $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
-                        $res=mysqli_query ($con,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, a.ID_COORDINADOR, d.empresa
-                        FROM mtch a INNER JOIN pam b ON a.Id_pam = b.Id_PAM INNER JOIN
-                        voluntario c ON a.Id_voluntario = c.Id_voluntario INNER JOIN
-                        empresa d ON c.Id_empresas = d.Id_empresas");
+                        $res=mysqli_query ($con,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, e.NOMBRE, d.empresa
+                        FROM mtch a 
+                        INNER JOIN pam b ON a.Id_pam = b.Id_PAM 
+                        INNER JOIN voluntario c ON a.Id_voluntario = c.Id_voluntario 
+                        INNER JOIN empresa d ON c.Id_empresas = d.Id_empresas
+                        INNER JOIN coordinador e ON e.ID = a.ID_COORDINADOR");
                         while($rec=mysqli_fetch_array($res))
                         {
                             echo'<tr>
                                 <td>'.$rec["Id_match"].'</td>
                                 <td>'.$rec["nombre_pam"].' '.$rec["apellido"].'</td>
                                 <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
-                                <td>'.$rec["ID_COORDINADOR"].'</td>
+                                <td>'.$rec["NOMBRE"].'</td>
                                 <td>'.$rec["empresa"].'</td>
                                 </tr>';
                         }
