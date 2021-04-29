@@ -19,3 +19,13 @@
 #example{
     border: solid 1px #8E65A8;
 }
+
+#agregar-btn{
+    background-color: #00A19B;
+    border-color: #00A19B;
+}
+
+#agregar-btn:hover{
+    background-color: #8E65A8;
+    border-color: #8E65A8;
+}

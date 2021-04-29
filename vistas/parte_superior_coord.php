@@ -39,7 +39,7 @@ if ($_SESSION["s_usuario"] === null) {
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#00A19B">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="vista-coordinador.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -48,11 +48,6 @@ if ($_SESSION["s_usuario"] === null) {
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                MENU
-            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -83,12 +78,12 @@ if ($_SESSION["s_usuario"] === null) {
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
+                                    Configuracion
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Cerrar sesión
                                 </a>
                             </div>
 

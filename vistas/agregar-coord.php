@@ -14,6 +14,8 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar un coordinador</title>
+
+    <link rel="stylesheet" href="estilos2.css">
 </head>
 <body>
     <div class="container">
@@ -36,7 +38,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         <label for="exampleInputEmail1">Repetir contraseña</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
-                    <button type="submit" class="btn btn-primary">Agregar</button>
+                    <button id="agregar-btn" type="submit" class="btn btn-primary">Agregar</button>
                 </form>
             </div>
         </div>

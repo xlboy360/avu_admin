@@ -30,18 +30,6 @@ if ($_SESSION["s_usuario"] === null) {
 
 </head>
 
-<style>
-#boton-configuracion{
-    background-color:#8E65A8;
-    border-color:#8E65A8
-}
-
-#boton-configuracion:hover{
-    opacity:80%;
-}
-
-</style>
-
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -69,45 +57,23 @@ if ($_SESSION["s_usuario"] === null) {
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="asignar-match.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-user-plus fa-chart-area"></i>
                     <span>Asignar match</span></a>
             </li>
-            
+
             <!-- Nav Item - Charts -->
-            <li class="nav-item" style="text-align:center;">
-                <button id="boton-configuracion" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Configuración
-                </button>
+            <li class="nav-item">
+                <a class="nav-link" href="agregar-coord.php">
+                    <i class="fas fa-plus-circle fa-chart-area"></i>
+                    <span>Agregar coordinador</span></a>
             </li>
 
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">¿Qué desea hacer?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        
-                        <a class="nav-link" href="agregar-coord.php">
-                        <button type="button" class="btn btn-primary">Añadir nuevo coordinador</button>
-                        </a>
-                        
-                        <a class="nav-link" href="agregar-admin.php">
-                        <button type="button" class="btn btn-primary">Añadir nuevo administrador</button>
-                        </a>
-                        
-                    </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="agregar-admin.php">
+                    <i class="fas fa-plus-circle fa-chart-area"></i>
+                    <span>Agregar administrador</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->

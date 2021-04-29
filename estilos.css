@@ -167,7 +167,7 @@ button:hover {
   margin: 0 auto;
 }
 
-.login-form-bgbtn {
+.login-form-bgbtn{
   position: absolute;
   z-index: -1;
   width: 300%;
@@ -186,7 +186,30 @@ button:hover {
   transition: all 0.4s;
 }
 
-.login-form-btn {
+.login-form-bgbtn2{
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: #00A19B;
+  background: -webkit-linear-gradient(right, #00A19B, #00A19B, #00A19B, #8E65A8);
+  background: -o-linear-gradient(right, #8E65A8, #8E65A8, #00A19B, #00A19B);
+  background: -moz-linear-gradient(right, #00A19B, #00A19B, #8E65A8, #8E65A8);
+  background: linear-gradient(right, #8E65A8, #8E65A8, #00A19B, #00A19B);
+  top: 0;
+  left: -100%;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+#coord-btn{
+  text-decoration: none;
+}
+
+.login-form-btn, #coord-btn {
   font-family: Poppins-Medium;
   font-size: 20px;
   color: #ffff;
@@ -206,6 +229,10 @@ button:hover {
 }
 
 .wrap-login-form-btn:hover .login-form-bgbtn {
+  left: 0;
+}
+
+.wrap-login-form-btn:hover .login-form-bgbtn2 {
   left: 0;
 }
 

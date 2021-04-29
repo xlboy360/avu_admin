@@ -38,9 +38,14 @@
                             <button type="submit" name="submit" class="login-form-btn">Ingresar</button>
                         </div>
                     </div>
+
                     <div class="container-login-form-btn">
-                        <a href="./vistas/log-in-coordinador.php" class="btn btn-outline-primary">Coordinador</a>
+                        <div class="wrap-login-form-btn">
+                            <div class="login-form-bgbtn2"></div>
+                            <a href="./vistas/log-in-coordinador.php" id="coord-btn">Coordinador</a>
+                        </div>
                     </div>
+
                 </form>
             </div>
 
