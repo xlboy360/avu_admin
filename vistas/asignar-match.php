@@ -196,10 +196,13 @@ if ($_SESSION["s_usuario"] === "null") {
                     </thead>
                     <tbody>
                     <?php
-                        $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
-                        $res=mysqli_query ($con,"select ID_COORDINADOR, count(ID_COORDINADOR) as total
-                        from mtch
-                        group by ID_COORDINADOR");
+                     require_once '../bd/conexion.php';
+                     $con = new Conexion();
+                     $con->Conectar();
+
+                       // $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
+                        $res=mysqli_query ($con->conexion,"select ID_COORDINADOR, count(ID_COORDINADOR) as total from mtch  WHERE ID_COORDINADOR > 0 group by ID_COORDINADOR 
+                        UNION SELECT ID, CANTIDAD_MATCH FROM coordinador ");
                         while($rec=mysqli_fetch_array($res))
                         {
                             echo'<tr>
