@@ -201,8 +201,8 @@ if ($_SESSION["s_usuario"] === "null") {
                      $con->Conectar();
 
                        // $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
-                       //select NOMBRE, count(ID_COORDINADOR) as total from mtch A INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE ID_COORDINADOR > 0 group by ID_COORDINADOR UNION SELECT ID, CANTIDAD_MATCH FROM coordinador
-                        $res=mysqli_query($con->conexion,"select A.ID_COORDINADOR, B.NOMBRE, count(ID_COORDINADOR) as total from mtch A INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE ID_COORDINADOR > 0 group by ID_COORDINADOR");
+                       //select A.ID_COORDINADOR, B.NOMBRE, count(ID_COORDINADOR) as total from mtch A INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE ID_COORDINADOR > 0 group by ID_COORDINADOR
+                        $res=mysqli_query($con->conexion,"select A.ID_COORDINADOR, B.NOMBRE,  count(A.ID_COORDINADOR) as total from mtch A INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE A.ID_COORDINADOR > 0 group by A.ID_COORDINADOR UNION SELECT B.ID, B.NOMBRE, B.CANTIDAD_MATCH FROM coordinador B");
                         while($rec=mysqli_fetch_array($res))
                         {
                             echo'<tr>
