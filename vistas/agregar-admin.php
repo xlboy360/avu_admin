@@ -23,20 +23,23 @@ if ($_SESSION["s_usuario"] === "null") {
             <div class="col-md-auto">
                 <form class="formulario-agregar-admin" action="">
                     <div class="form-group">
+                        <span class="titulo-formulario">Agregar administrador</span>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputEmail1">Nombre del administrador</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Usuario del administrador</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Contraseña del administrador</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Repetir contraseña</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group" style="text-align:center;">                        
                         <button id="agregar-btn" type="submit" class="btn btn-primary">Agregar</button>

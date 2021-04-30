@@ -33,6 +33,12 @@
 .formulario-agregar-admin{
     background-color: #EDEDED;
     padding: 50px;
-    margin: 50px;
+    margin: 25px;
     border-radius: 20px;
+}
+
+.titulo-formulario{
+    color: #1D1D1B;
+    font-size: 30px;
+    font-weight: bold;
 }
