@@ -26,14 +26,6 @@ if ($_SESSION["s_usuario"] === "null") {
 
 <body>
     <div class="content-fluid">
-        <!-- Consultar -->
-        <!-- <div class="row justify-content-md-center p-4">
-            <div class="col-md-auto"><input class="form-control" type="text" placeholder="Id Match"></div>
-            <div class="col-md-auto"><input class="form-control" type="text" placeholder="Empresa"></div>
-            <div class="col-md-auto"><input class="form-control" type="text" placeholder="Coordinador"></div>
-            <div class="col-md-auto"><button type="submit" class="btn btn-primary" id="consultar">Consultar</button></div>
-        </div> -->
-
         <!-- Graficación -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
@@ -49,7 +41,6 @@ if ($_SESSION["s_usuario"] === "null") {
                             data: {usuario:`<?php echo $_SESSION["s_usuario"]; ?>`}
                         }).done(function(resp) {
                             // Variables para los titulos y su contenido
-                            console.log(resp)
                             var cantidadSi = [];
                             var cantidadNo = [];
 
@@ -113,7 +104,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <!-- Paginación -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <table id="example" class="table table-striped table-bordered table-hover table-light" style="width:100%">
                     <thead>
                         <tr>
                             <th>Id Match</th>
@@ -125,9 +116,11 @@ if ($_SESSION["s_usuario"] === "null") {
                     </thead>
                     <tbody>
                     <?php
+                        require_once '../bd/conexion.php';
+                        $con = new Conexion();
+                        $con->Conectar();
                         $coord = $_SESSION["s_usuario"];
-                        $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
-                        $res=mysqli_query ($con,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, e.NOMBRE, d.empresa
+                        $res=mysqli_query ($con->conexion,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, e.NOMBRE, d.empresa
                         FROM mtch a INNER JOIN pam b ON a.Id_pam = b.Id_PAM INNER JOIN
                         voluntario c ON a.Id_voluntario = c.Id_voluntario INNER JOIN
                         coordinador e ON e.ID = a.ID_COORDINADOR INNER JOIN
@@ -135,7 +128,8 @@ if ($_SESSION["s_usuario"] === "null") {
                         WHERE '$coord' = e.USUARIO ");
                         while($rec=mysqli_fetch_array($res))
                         {
-                            echo'<tr>
+                            echo
+                            '<tr>
                                 <td>'.$rec["Id_match"].'</td>
                                 <td>'.$rec["nombre_pam"].' '.$rec["apellido"].'</td>
                                 <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
@@ -143,6 +137,7 @@ if ($_SESSION["s_usuario"] === "null") {
                                 <td>'.$rec["empresa"].'</td>
                             </tr>';
                         }
+                        $con->cerrar();
                     ?>
                     </tbody>
                 </table>
