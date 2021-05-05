@@ -34,20 +34,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="../jquery/jquery-3.6.0.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-   <!-- <script src="../jquery-easing/jquery.easing.min.js"></script>--> 
-
-    <!-- Page level plugins -->
     <script src="../chartjs/Chart.min.js"></script>
-    
-    <!-- Custom scripts for all pages
-    <script src="js/sb-admin-2.min.js"></script>
-
-    < !--Page level custom scripts 
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>-->
-
 </body>
 
 </html>
