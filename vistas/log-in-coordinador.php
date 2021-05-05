@@ -55,7 +55,7 @@
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script src="../popper/popper.min.js"></script>
         <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
-        <script src="ingresar-coord.js"></script>
+        <script src="js/ingresar-coord.js"></script>
 
 </body>
 

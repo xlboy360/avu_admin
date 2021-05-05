@@ -1,6 +1,5 @@
 var elementos = document.getElementsByClassName('agregar');
 var x = 'Hola';
-//Array.from(document.getElementsByClassName('agregar')).forEach((botonEditar,index)=>botonEditar.onclick=editar(index))
 
 function identidad(id1) {
   x = id1;
@@ -14,9 +13,7 @@ const swalWithBootstrapButtons = Swal.mixin({
   buttonsStyling: false
 })
 
-
 function agregar() {
-
   swalWithBootstrapButtons.fire({
     title: '<strong>Asignar match a ID: ' + x + '</strong>',
     html:
@@ -36,22 +33,6 @@ function agregar() {
   }).then((result) => {
     if (result.isConfirmed) {
       document.envia.submit()
-      /*  swalWithBootstrapButtons.fire({
-          title: '¡Registro guardado!',
-          text: "¿Desea agregar otro? ",
-          icon: 'success',
-          showCancelButton: true, 
-          focusConfirm: false,
-          reverseButtons: true,
-          confirmButtonText: 'Agregar',
-          cancelButtonText: 'Cancelar',
-
-          
-        }).then((result2)=> {
-          if(result2.isConfirmed){
-         agregar();
-          }
-        })*/
     }
   })
 
@@ -76,38 +57,12 @@ $('#form-agregar').submit(function (e) {
     url: "agregar.php",
     type: "POST",
     datatype: "json",
-
     success: function (data) {
       console.log(data);
-      /* if(data === "null"){
-           Swal.fire({
-               icon:'error',
-               title:'Usuario y/o password incorrecta',
-           });
-       }else{
-           Swal.fire({
-               icon:'success',
-               title:'¡Conexión exitosa!',
-               confirmButtonColor:'#3085d6',
-               confirmButtonText:'Ingresado correctamente'
-           }).then((result) => {
-               if(result.value){
-                   window.location.href = "./vistas/index.php";
-               }
-           });
-       }*/
     }
   }).send({ "data": "id:id&cantidad:cant&empresa:empresa" });;
 
 });
-/*
-var miAjax = new Request({
-  "url": "recibo-post.php",
-  "onSuccess": function(respuesta){
-     $("contenedorajax").set("html", respuesta);
-  }
-}).send({"data": "provincia=malaga&ciudad=marbella"});
-*/
 
 // Agregar administrador.
 $('#formulario-agregar-admin').submit(function (e) {

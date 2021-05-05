@@ -19,7 +19,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="estilos2.css">
-    
+
     <!-- Script necesario para las gráficas -->
     <script src="../chartjs/chart.min.js"></script>
 </head>
@@ -38,7 +38,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
 
-                <canvas id="myChart" width="1000px" height="400px"></canvas>
+                <canvas id="myChart" width="1500px" height="400px"></canvas>
                 <!-- Gráfica de barras para los totales de actividades realziadas y las que no -->
                 <script>
                     // Función para cargar los datos de la BD a la gráfica
@@ -111,7 +111,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <!-- Paginación  -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <table id="example" class="table table-striped table-bordered table-hover table-light" style="width:100%">
                     <thead>
                         <tr>
                             <th>Id Match</th>
@@ -122,34 +122,29 @@ if ($_SESSION["s_usuario"] === "null") {
                         </tr>
                     </thead>
                     <tbody>
-
-                        <!--Aqui va el codigo para consultar la bd con php
-                        SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, a.ID_COORDINADOR, d.empresa
-                        FROM mtch a INNER JOIN pam b ON a.Id_pam = b.Id_PAM INNER JOIN
-                        voluntario c ON a.Id_voluntario = c.Id_voluntario INNER JOIN
-                        empresa d ON c.Id_empresas = d.Id_empresas-->
-
-                    <?php
-                        $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
-                        $res=mysqli_query ($con,"SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, e.NOMBRE, d.empresa
-                        FROM mtch a 
-                        INNER JOIN pam b ON a.Id_pam = b.Id_PAM 
-                        INNER JOIN voluntario c ON a.Id_voluntario = c.Id_voluntario 
-                        INNER JOIN empresa d ON c.Id_empresas = d.Id_empresas
-                        INNER JOIN coordinador e ON e.ID = a.ID_COORDINADOR");
-                        while($rec=mysqli_fetch_array($res))
-                        {
-                            echo'<tr>
-                                <td>'.$rec["Id_match"].'</td>
-                                <td>'.$rec["nombre_pam"].' '.$rec["apellido"].'</td>
-                                <td>'.$rec["nombre"].' '.$rec["apellido"].'</td>
-                                <td>'.$rec["NOMBRE"].'</td>
-                                <td>'.$rec["empresa"].'</td>
+                        <?php
+                        require_once '../bd/conexion.php';
+                        $con = new Conexion();
+                        $con->Conectar();
+                        $res = mysqli_query($con->conexion, "SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, e.NOMBRE, d.empresa
+                            FROM mtch a 
+                            INNER JOIN pam b ON a.Id_pam = b.Id_PAM 
+                            INNER JOIN voluntario c ON a.Id_voluntario = c.Id_voluntario 
+                            INNER JOIN empresa d ON c.Id_empresas = d.Id_empresas
+                            INNER JOIN coordinador e ON e.ID = a.ID_COORDINADOR");
+                        while ($rec = mysqli_fetch_array($res)) {
+                            echo '<tr>
+                                <td>' . $rec["Id_match"] . '</td>
+                                <td>' . $rec["nombre_pam"] . ' ' . $rec["apellido"] . '</td>
+                                <td>' . $rec["nombre"] . ' ' . $rec["apellido"] . '</td>
+                                <td>' . $rec["NOMBRE"] . '</td>
+                                <td>' . $rec["empresa"] . '</td>
                                 </tr>';
                         }
-                    ?>
+                        $con->cerrar();
+                        ?>
                     </tbody>
-                </table> 
+                </table>
             </div>
         </div>
 

@@ -55,7 +55,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../popper/popper.min.js"></script>
     <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="funcion.js"></script>
+    <script src="js/funcion.js"></script>
 </body>
 
 </html>

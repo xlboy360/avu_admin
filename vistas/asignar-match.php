@@ -28,15 +28,16 @@ if ($_SESSION["s_usuario"] === "null") {
         <!--Graficas-->
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <canvas id="activacion1" width="200px" heigh="150px"></canvas>
+                <canvas id="activacion1" width="250px" heigh="250px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion2" width="200px" heigh="150px"></canvas>
+                <canvas id="activacion2" width="250px" heigh="250px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion3" width="200px" heigh="150px"></canvas>
+                <canvas id="activacion3" width="250px" heigh="250px"></canvas>
             </div>
         </div>
+        <br>
 
         <!-- Código para gráficas de pie -->
         <script>
@@ -170,7 +171,7 @@ if ($_SESSION["s_usuario"] === "null") {
                         }]
                     },
                     options: {
-                        responsive:true,
+                        responsive: true,
                         plugins: {
                             legend: {
                                 position: 'top',
@@ -187,7 +188,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <!-- Paginación -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <table id="example" class="table table-light table-striped table-bordered table-hover" style="width:100%">
                     <thead>
                         <tr>
                             <th>Coordinador</th>
@@ -195,29 +196,28 @@ if ($_SESSION["s_usuario"] === "null") {
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                     require_once '../bd/conexion.php';
-                     $con = new Conexion();
-                     $con->Conectar();
-
-                       // $con=mysqli_connect("localhost","root","","id16169015_avuconecta");
-                       //select A.ID_COORDINADOR, B.NOMBRE, count(ID_COORDINADOR) as total from mtch A INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE ID_COORDINADOR > 0 group by ID_COORDINADOR
-                        $res=mysqli_query($con->conexion,"select A.ID_COORDINADOR, B.NOMBRE,  count(A.ID_COORDINADOR) as total from mtch A INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE A.ID_COORDINADOR > 0 group by A.ID_COORDINADOR UNION SELECT B.ID, B.NOMBRE, B.CANTIDAD_MATCH FROM coordinador B");
-                        while($rec=mysqli_fetch_array($res))
-                        {
-                            echo'<tr>
-                                <td>'.$rec["NOMBRE"].'</td>
-                                <td>'.$rec["total"].'</td>
-
-                              <td>  <!-- <button type="button" class="btn btn-warning">Editar</button> -->
-                                <button type="button" class="btn btn-success agregar"  value="'.$rec["ID_COORDINADOR"].'" onclick="identidad ('.$rec["ID_COORDINADOR"].')" >Agregar</button></td>
-
+                        <?php
+                        require_once '../bd/conexion.php';
+                        $con = new Conexion();
+                        $con->Conectar();
+                        $res = mysqli_query($con->conexion, "SELECT A.ID_COORDINADOR, B.NOMBRE,  count(A.ID_COORDINADOR) as total from mtch A 
+                            INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE A.ID_COORDINADOR > 0 group by A.ID_COORDINADOR 
+                            UNION SELECT B.ID, B.NOMBRE, B.CANTIDAD_MATCH FROM coordinador B");
+                        while ($rec = mysqli_fetch_array($res)) {
+                            echo 
+                            '<tr class="text-center">
+                                <td>' . $rec["NOMBRE"] . '</td>
+                                <td>' . $rec["total"] . '</td>
+                                <td> <button type="button" class="btn btn-outline-success agregar"  value="' .
+                                    $rec["ID_COORDINADOR"] . '" onclick="identidad (' . $rec["ID_COORDINADOR"] . ')" >Agregar</button>
+                                </td>
                             </tr>';
                         }
-                    ?>
-                </tbody>
-            </table>
-            </div>            
+                        $con->cerrar();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
@@ -235,7 +235,7 @@ if ($_SESSION["s_usuario"] === "null") {
     cargarDatosGraficaActivacion2()
     cargarDatosGraficaActivacion3()
     $(document).ready(function() {
-        $('#example').DataTable({
+        $('#example').DataTable({ //No está funcionando 05/05/2021
             language: {
                 processing: "Tratamiento en curso...",
                 search: "Buscar&nbsp;:",
@@ -272,4 +272,4 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="../popper/popper.min.js"></script>
 <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
-<script src="funcion.js"></script>
+<script src="js/funcion.js"></script>
