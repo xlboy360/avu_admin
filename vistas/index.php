@@ -52,23 +52,37 @@ if ($_SESSION["s_usuario"] === "null") {
                             var cantidadNo = [];
 
                             var contadorSi = 0;
-                            var contadorNoo = 0;
+                            var contadorNo = 0;
 
                             var dataContenido = JSON.parse(resp);
-
+                            console.log(dataContenido);
                             var titulos1 = [];
                             for (let i = 0; i < 30; i++)
                                 titulos1[i] = i + 1
+
                             // For para recorrer los elementos de la tabala
                             for (var i = 0; i < dataContenido.length; i++) {
+                                // console.log(dataContenido[i][3]);
+                                console.log(dataContenido[i][1]);
+                                console.log(titulos1[i]);
+
+                                if (dataContenido[i][1] == titulos1[i]) {
+
+                                }
+
                                 if (dataContenido[i][3] == "si") {
+                                    // console.log("Entro en si");
+                                    cantidadSi[i]++;
                                     contadorSi++;
                                 }
                                 if (dataContenido[i][3] == "no") {
+                                    // console.log("Entro en no");
                                     contadorNo++;
                                 }
-                                cantidadSi[i] = contadorSi;
-                                cantidadNo[i] = cantidadNo;
+                                // cantidadSi[i] = contadorSi;
+                                // cantidadNo[i] = contadorNo;
+                                // console.log("SI:" + cantidadSi);
+                                // console.log("NO:" + cantidadNo);
                             }
 
                             var ctx = document.getElementById('myChart').getContext('2d');
@@ -79,9 +93,7 @@ if ($_SESSION["s_usuario"] === "null") {
                                     datasets: [{
                                             label: 'Actividades realizadas',
                                             data: cantidadSi,
-                                            backgroundColor:
-                                                // Color verde
-                                                'rgba(75, 192, 192, 0.2)',
+                                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
                                             borderColor: 'rgba(75, 192, 192, 1)',
                                             borderWidth: 1
                                         },
