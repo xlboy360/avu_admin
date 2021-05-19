@@ -235,7 +235,7 @@ if ($_SESSION["s_usuario"] === "null") {
     cargarDatosGraficaActivacion2()
     cargarDatosGraficaActivacion3()
     $(document).ready(function() {
-        $('#example').DataTable({ //No está funcionando 05/05/2021
+    /*   $('#example').DataTable({ //No está funcionando 05/05/2021
             language: {
                 processing: "Tratamiento en curso...",
                 search: "Buscar&nbsp;:",
@@ -265,7 +265,7 @@ if ($_SESSION["s_usuario"] === "null") {
                 [10, 25, -1],
                 [10, 25, "All"]
             ],
-        });
+        });*/
     });
 </script>
 

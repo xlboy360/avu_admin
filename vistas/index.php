@@ -56,7 +56,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
                             var dataContenido = JSON.parse(resp);
                             console.log(dataContenido);
-                            var titulos1 = [];
+                            var titulos1 =[];
                             for (let i = 0; i < 30; i++)
                                 titulos1[i] = i + 1
 
