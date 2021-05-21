@@ -15,16 +15,18 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar un coordinador</title>
-
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="estilos2.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="content">
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <form class="formulario-agregar-admin" id="formulario-agregar-coordinador" action="" method="POST"> 
+                <form class="formulario-agregar-admin" id="formulario-agregar-coordinador" method="POST"> 
                     <div class="form-group">
                         <span class="titulo-formulario">Agregar coordinador</span>
                     </div>
@@ -51,13 +53,14 @@ if ($_SESSION["s_usuario"] === "null") {
             </div>
         </div>
     </div>
-    <script src="../jquery/jquery-3.6.0.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../popper/popper.min.js"></script>
-    <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="js/funcion.js"></script>
 </body>
 
 </html>
 <!-- FIN DEL CONTENIDO PRINCIPAL -->
 <?php require_once "./parte_inferior.php" ?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="../popper/popper.min.js"></script>
+<script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
+
+<script src="js/funcion.js"></script>

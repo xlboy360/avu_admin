@@ -23,7 +23,7 @@ if ($_SESSION["s_usuario"] === "null") {
 </head>
 
 <body>
-    <div class="content-fluid">
+    <div class="content">
 
         <!--Graficas-->
         <div class="row justify-content-md-center">
