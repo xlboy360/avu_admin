@@ -19,7 +19,6 @@ if ($_SESSION["s_usuario"] === "null") {
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="estilos2.css">
-
     <!-- Script necesario para las gráficas -->
     <script src="../bootstrap/chart.js/Chart.js"></script>
 </head>

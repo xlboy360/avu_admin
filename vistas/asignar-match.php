@@ -21,7 +21,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="estilos2.css">
 
-    <script src="../bootstrap/chart.js/Chart.js"></script>
+    <script src="../chartjs/chart.min.js"></script>
 </head>
 
 <body>
@@ -30,13 +30,13 @@ if ($_SESSION["s_usuario"] === "null") {
         <!--Graficas-->
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <canvas id="activacion1" width="250px" heigh="250px"></canvas>
+                <canvas id="activacion1" width="250px" heigh="350px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion2" width="250px" heigh="250px"></canvas>
+                <canvas id="activacion2" width="250px" heigh="350px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion3" width="250px" heigh="250px"></canvas>
+                <canvas id="activacion3" width="250px" heigh="350px"></canvas>
             </div>
         </div>
         <br>
@@ -66,13 +66,10 @@ if ($_SESSION["s_usuario"] === "null") {
                             contadorSi++;
                         } else {
                             contadorNo++;
-
                         }
                     }
-
                     datos[0] = contadorSi
                     datos[1] = contadorNo
-
                     // Función para crear el gráfico
                     CrearGrafico('pie', titulos1, datos, 'activacion1')
                 })
@@ -229,12 +226,11 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="../bootstrap/datatables/jquery.dataTables.min.js"></script>
 <script src="../bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
 <script>
-    cargarDatosGraficaActivacion1()
-    cargarDatosGraficaActivacion2()
-    cargarDatosGraficaActivacion3() 
+    cargarDatosGraficaActivacion1();
+    cargarDatosGraficaActivacion2();
+    cargarDatosGraficaActivacion3();
 </script>
 
 <script src="../popper/popper.min.js"></script>
 <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
-
 <script src="js/funcion.js"></script>

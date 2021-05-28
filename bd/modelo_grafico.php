@@ -33,7 +33,7 @@
         }
 
         function TraerDatosGraficoPieActivacion1(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN VOLUNTARIO AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 1";
+            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 1";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -43,7 +43,7 @@
         }
 
         function TraerDatosGraficoPieActivacion2(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN VOLUNTARIO AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 2";
+            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 2";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -53,7 +53,7 @@
         }
 
         function TraerDatosGraficoPieActivacion3(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN VOLUNTARIO AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 3";
+            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 3";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
