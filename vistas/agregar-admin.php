@@ -16,8 +16,8 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar un coordinador</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="estilos2.css">
 </head>
@@ -61,7 +61,7 @@ if ($_SESSION["s_usuario"] === "null") {
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="../jquery/jquery-3.6.0.min.js"></script>
 <script src="../popper/popper.min.js"></script>
 <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
 

@@ -15,30 +15,22 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Administrador</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="estilos2.css">
 
     <!-- Script necesario para las gráficas -->
-    <script src="../chartjs/chart.min.js"></script>
+    <script src="../bootstrap/chart.js/Chart.js"></script>
 </head>
 
 <body>
     <div class="content-fluid">
-        <!-- Consultar -->
-        <div class="row justify-content-md-center p-4">
-            <div class="col-md-auto"><input class="form-control" type="text" placeholder="Id Match"></div>
-            <div class="col-md-auto"><input class="form-control" type="text" placeholder="Empresa"></div>
-            <div class="col-md-auto"><input class="form-control" type="text" placeholder="Coordinador"></div>
-            <div class="col-md-auto"><button type="submit" class="btn btn-primary" id="consultar">Consultar</button></div>
-        </div>
-
         <!-- Graficación -->
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
 
-                <canvas id="myChart" width="1500px" height="400px"></canvas>
+                <canvas id="myChart" width="1500px" height="600px"></canvas>
                 <!-- Gráfica de barras para los totales de actividades realziadas y las que no -->
                 <script>
                     // Función para cargar los datos de la BD a la gráfica
@@ -65,9 +57,6 @@ if ($_SESSION["s_usuario"] === "null") {
 
                             // For para recorrer los elementos de la tabala
                             for (let i = 0; i < dataContenido.length; i++) {
-                                console.log(dataContenido[i][3]);
-                                // console.log(dataContenido[i][1]);
-
                                 switch (dataContenido[i][1]) {
                                     case "1":
                                         if (dataContenido[i][3] == "si") {
@@ -456,9 +445,9 @@ if ($_SESSION["s_usuario"] === "null") {
 <!-- FIN DEL CONTENIDO PRINCIPAL -->
 <?php require_once "./parte_inferior.php" ?>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<script src="../jquery/jquery-3.6.0.min.js"></script>
+<script src="../bootstrap/datatables/jquery.dataTables.min.js"></script>
+<script src="../bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
 <script>
     cargarDatosGrafica()
     $(document).ready(function() {

@@ -16,10 +16,12 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coordinador</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="estilos2.css">
+
+    <script src="../bootstrap/chart.js/Chart.js"></script>
 </head>
 
 <body>
@@ -51,7 +53,6 @@ if ($_SESSION["s_usuario"] === "null") {
                     var contadorNo = 0;
 
                     var dataContenido = JSON.parse(resp);
-                    console.log(dataContenido)
 
                     var titulos1 = []
                     titulos1[0] = "Asignados"
@@ -87,7 +88,6 @@ if ($_SESSION["s_usuario"] === "null") {
                     var contadorNo = 0;
 
                     var dataContenido = JSON.parse(resp);
-                    console.log(dataContenido)
 
                     var titulos1 = []
                     titulos1[0] = "Asignados"
@@ -122,7 +122,6 @@ if ($_SESSION["s_usuario"] === "null") {
                     var contadorNo = 0;
 
                     var dataContenido = JSON.parse(resp);
-                    console.log(dataContenido)
 
                     var titulos1 = []
                     titulos1[0] = "Asignados"
@@ -226,47 +225,13 @@ if ($_SESSION["s_usuario"] === "null") {
 </html>
 <!-- FIN DEL CONTENIDO PRINCIPAL -->
 <?php require_once "./parte_inferior.php" ?>
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<script src="../jquery/jquery-3.6.0.min.js"></script>
+<script src="../bootstrap/datatables/jquery.dataTables.min.js"></script>
+<script src="../bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
 <script>
     cargarDatosGraficaActivacion1()
     cargarDatosGraficaActivacion2()
-    cargarDatosGraficaActivacion3()
-    $(document).ready(function() {
-    /*   $('#example').DataTable({ //No está funcionando 05/05/2021
-            language: {
-                processing: "Tratamiento en curso...",
-                search: "Buscar&nbsp;:",
-                lengthMenu: "Agrupar de _MENU_ items",
-                info: "Mostrando del registro _START_ al _END_ de un total de _TOTAL_ registros",
-                infoEmpty: "No existen datos.",
-                infoFiltered: "(filtrado de _MAX_ elementos en total)",
-                infoPostFix: "",
-                loadingRecords: "Cargando...",
-                zeroRecords: "No se encontraron datos con tu busqueda",
-                emptyTable: "No hay datos disponibles en la tabla.",
-                paginate: {
-                    first: "Primero",
-                    previous: "Anterior",
-                    next: "Siguiente",
-                    last: "Ultimo"
-                },
-                aria: {
-                    sortAscending: ": active para ordenar la columna en orden ascendente",
-                    sortDescending: ": active para ordenar la columna en orden descendente"
-                }
-            },
-            //Tamaño del scroll vertical
-            scrollY: 200,
-            //Cambia las las opciones de la tabla
-            lengthMenu: [
-                [10, 25, -1],
-                [10, 25, "All"]
-            ],
-        });*/
-    });
+    cargarDatosGraficaActivacion3() 
 </script>
 
 <script src="../popper/popper.min.js"></script>

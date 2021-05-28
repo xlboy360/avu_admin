@@ -16,10 +16,9 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coordinador</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="estilos2.css">
-
     <!-- Script necesario para las gráficas -->
     <script src="../chartjs/chart.min.js"></script>
 </head>
@@ -30,7 +29,7 @@ if ($_SESSION["s_usuario"] === "null") {
         <div class="row justify-content-md-center p-4">
             <div class="col-md-auto">
 
-                <canvas id="myChart" width="1000px" height="400px"></canvas>
+                <canvas id="myChart" width="1000px" height="600px"></canvas>
                 <!-- <button onclick=cargarDatosGrafica()></button> -->
                 <script>
                     // Función para cargar los datos de la BD a la gráfica
@@ -455,9 +454,9 @@ if ($_SESSION["s_usuario"] === "null") {
 <!-- FIN DEL CONTENIDO PRINCIPAL -->
 <?php require_once "./parte_inferior.php" ?>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<script src="../jquery/jquery-3.6.0.min.js"></script>
+<script src="../bootstrap/datatables/jquery.dataTables.min.js"></script>
+<script src="../bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
 <script>
     cargarDatosGrafica()
     $(document).ready(function() {
