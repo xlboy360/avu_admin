@@ -19,7 +19,6 @@ if ($_SESSION["s_usuario"] === "null") {
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="estilos2.css">
-
     <!-- Script necesario para las gráficas -->
     <script src="../bootstrap/chart.js/Chart.js"></script>
 </head>
@@ -404,11 +403,16 @@ if ($_SESSION["s_usuario"] === "null") {
                 <table id="example" class="table table-striped table-bordered table-hover table-light" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Id Match</th>
-                            <th>Nombre PAM</th>
-                            <th>Nombre voluntario</th>
-                            <th>Nombre coordinador</th>
-                            <th>Empresa</th>
+                            <th>Id</th>
+                            <th>Correo voluntario</th>
+                            <th>PAM</th>
+                            <th>Telefono</th>
+                            <th>Realizo</th>
+                            <th>Duracion</th>
+                            <th>Actividad_id</th>
+                            <th>Emoción</th>
+                            <th>Observaciones</th>
+                            <th>Created_at</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -416,19 +420,19 @@ if ($_SESSION["s_usuario"] === "null") {
                         require_once '../bd/conexion.php';
                         $con = new Conexion();
                         $con->Conectar();
-                        $res = mysqli_query($con->conexion, "SELECT a.Id_match, b.nombre_pam, b.apellido, c.nombre, c.apellido, e.NOMBRE, d.empresa
-                            FROM mtch a 
-                            INNER JOIN pam b ON a.Id_pam = b.Id_PAM 
-                            INNER JOIN voluntario c ON a.Id_voluntario = c.Id_voluntario 
-                            INNER JOIN empresa d ON c.Id_empresas = d.Id_empresas
-                            INNER JOIN coordinador e ON e.ID = a.ID_COORDINADOR");
+                        $res = mysqli_query($con->conexion, "SELECT A.id, B.email AS 'Correo Voluntario', C.nombre AS 'PAM', C.telefono, A.realizo, A.duracion, A.actividad_id, A.emocion, A.observaciones, A.created_at FROM llamadas A INNER JOIN users B ON B.id = A.user_id INNER JOIN mayors C ON C.user_id = B.id ORDER BY A.id ASC");
                         while ($rec = mysqli_fetch_array($res)) {
                             echo '<tr>
-                                <td>' . $rec["Id_match"] . '</td>
-                                <td>' . $rec["nombre_pam"] . ' ' . $rec["apellido"] . '</td>
-                                <td>' . $rec["nombre"] . ' ' . $rec["apellido"] . '</td>
-                                <td>' . $rec["NOMBRE"] . '</td>
-                                <td>' . $rec["empresa"] . '</td>
+                                <td>' . $rec["id"] . '</td>
+                                <td>' . $rec["Correo Voluntario"] . '</td>
+                                <td>' . $rec["PAM"] . '</td>
+                                <td>' . $rec["telefono"] . '</td>
+                                <td>' . $rec["realizo"] . '</td>
+                                <td>' . $rec["duracion"] . '</td>
+                                <td>' . $rec["actividad_id"] . '</td>
+                                <td>' . $rec["emocion"] . '</td>
+                                <td>' . $rec["observaciones"] . '</td>
+                                <td>' . $rec["created_at"] . '</td>
                                 </tr>';
                         }
                         $con->cerrar();
@@ -475,11 +479,11 @@ if ($_SESSION["s_usuario"] === "null") {
                 }
             },
             //Tamaño del scroll vertical
-            scrollY: 200,
+            scrollY: 500,
             //Cambia las las opciones de la tabla
             lengthMenu: [
-                [10, 25, -1],
-                [10, 25, "All"]
+                [10, 20, 40, 80, 160, -1],
+                [10, 20, 40, 80, 160, "All"]
             ],
         });
     });

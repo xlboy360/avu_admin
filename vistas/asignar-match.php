@@ -21,7 +21,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="estilos2.css">
 
-    <script src="../bootstrap/chart.js/Chart.js"></script>
+    <script src="../chartjs/chart.min.js"></script>
 </head>
 
 <body>
@@ -30,13 +30,13 @@ if ($_SESSION["s_usuario"] === "null") {
         <!--Graficas-->
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <canvas id="activacion1" width="250px" heigh="250px"></canvas>
+                <canvas id="activacion1" width="250px" heigh="350px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion2" width="250px" heigh="250px"></canvas>
+                <canvas id="activacion2" width="250px" heigh="350px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion3" width="250px" heigh="250px"></canvas>
+                <canvas id="activacion3" width="250px" heigh="350px"></canvas>
             </div>
         </div>
         <br>
@@ -66,13 +66,10 @@ if ($_SESSION["s_usuario"] === "null") {
                             contadorSi++;
                         } else {
                             contadorNo++;
-
                         }
                     }
-
                     datos[0] = contadorSi
                     datos[1] = contadorNo
-
                     // Función para crear el gráfico
                     CrearGrafico('pie', titulos1, datos, 'activacion1')
                 })
@@ -190,8 +187,10 @@ if ($_SESSION["s_usuario"] === "null") {
                 <table id="example" class="table table-light table-striped table-bordered table-hover" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Coordinador</th>
-                            <th>Match asignados</th>
+                            <th>Mayor</th>
+                            <th>Horario</th>
+                            <th>User</th>
+                            <th>User email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -199,17 +198,14 @@ if ($_SESSION["s_usuario"] === "null") {
                         require_once '../bd/conexion.php';
                         $con = new Conexion();
                         $con->Conectar();
-                        $res = mysqli_query($con->conexion, "SELECT A.ID_COORDINADOR, B.NOMBRE,  count(A.ID_COORDINADOR) as total from mtch A 
-                            INNER JOIN coordinador B on A.ID_COORDINADOR=B.ID WHERE A.ID_COORDINADOR > 0 group by A.ID_COORDINADOR 
-                            UNION SELECT B.ID, B.NOMBRE, B.CANTIDAD_MATCH FROM coordinador B");
+                        $res = mysqli_query($con->conexion, "SELECT A.nombre, A.horario, B.name, B.email from mayors A INNER JOIN users B on A.user_id = B.id");
                         while ($rec = mysqli_fetch_array($res)) {
                             echo 
                             '<tr class="text-center">
-                                <td>' . $rec["NOMBRE"] . '</td>
-                                <td>' . $rec["total"] . '</td>
-                                <td> <button type="button" class="btn btn-outline-success agregar"  value="' .
-                                    $rec["ID_COORDINADOR"] . '" onclick="identidad (' . $rec["ID_COORDINADOR"] . ')" >Agregar</button>
-                                </td>
+                                <td>' . $rec["nombre"] . '</td>
+                                <td>' . $rec["horario"] . '</td>
+                                <td>' . $rec["name"] . '</td>
+                                <td>' . $rec["email"] . '</td>
                             </tr>';
                         }
                         $con->cerrar();
@@ -229,12 +225,11 @@ if ($_SESSION["s_usuario"] === "null") {
 <script src="../bootstrap/datatables/jquery.dataTables.min.js"></script>
 <script src="../bootstrap/datatables/dataTables.bootstrap4.min.js"></script>
 <script>
-    cargarDatosGraficaActivacion1()
-    cargarDatosGraficaActivacion2()
-    cargarDatosGraficaActivacion3() 
+    cargarDatosGraficaActivacion1();
+    cargarDatosGraficaActivacion2();
+    cargarDatosGraficaActivacion3();
 </script>
 
 <script src="../popper/popper.min.js"></script>
 <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
-
 <script src="js/funcion.js"></script>

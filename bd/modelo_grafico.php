@@ -1,4 +1,4 @@
-<?php 
+wa<?php 
     class Modelo_Grafico {
         private $conexion;
         function __construct()
@@ -9,8 +9,7 @@
         }
 
         function TraerDatosGraficoBar(){
-            $consulta = "SELECT Id_match, R.Id_actividad, nombre_actividad, realizo_actividad FROM registro_actividad as R 
-                INNER JOIN actividad as A ON A.Id_actividad = R.Id_actividad ORDER BY R.Id_actividad ASC";
+            $consulta = "SELECT R.id, R.actividad_id, realizo FROM llamadas as R INNER JOIN actividad as A ON A.id = R.id ORDER BY R.id ASC";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -33,7 +32,7 @@
         }
 
         function TraerDatosGraficoPieActivacion1(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN VOLUNTARIO AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 1";
+            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 1";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -43,7 +42,7 @@
         }
 
         function TraerDatosGraficoPieActivacion2(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN VOLUNTARIO AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 2";
+            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 2";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -53,7 +52,7 @@
         }
 
         function TraerDatosGraficoPieActivacion3(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN VOLUNTARIO AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 3";
+            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 3";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
