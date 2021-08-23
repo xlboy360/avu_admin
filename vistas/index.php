@@ -54,307 +54,307 @@ if ($_SESSION["s_usuario"] === "null") {
                                 cantidadNo[i] = 0
                             }
 
-                            // For para recorrer los elementos de la tabala
+                            // For para recorrer los elementos de la tabla
                             for (let i = 0; i < dataContenido.length; i++) {
-                                switch (dataContenido[i][1]) {
+                                switch (dataContenido[i][0]) {
                                     case "1":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[0]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[0]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "2":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[1]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[1]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "3":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[2]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[2]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "4":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[3]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[3]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "5":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[4]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[4]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "6":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[5]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[5]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "7":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[6]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[6]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "8":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[7]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[7]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "9":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[8]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[8]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "10":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[9]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[9]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "11":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[10]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[10]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "12":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[11]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[11]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "13":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[12]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[12]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "14":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[13]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[13]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "15":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[14]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[14]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "16":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[15]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[15]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "17":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[16]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[16]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "18":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[17]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[17]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "19":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[18]++;
                                             contadorSi++;
 
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[18]++;
                                             contadorNo++;
 
                                         }
                                         break;
                                     case "20":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[19]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[19]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "21":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[20]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[20]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "22":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[21]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[21]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "23":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[22]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[22]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "24":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[23]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[23]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "25":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[24]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[24]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "26":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[25]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[25]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "27":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[26]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[26]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "28":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[27]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[27]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "29":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[28]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[28]++;
                                             contadorNo++;
                                         }
                                         break;
                                     case "30":
-                                        if (dataContenido[i][3] == "si") {
+                                        if (dataContenido[i][1] == "1") {
                                             cantidadSi[29]++;
                                             contadorSi++;
                                         }
-                                        if (dataContenido[i][3] == "no") {
+                                        if (dataContenido[i][1] == "0") {
                                             cantidadNo[29]++;
                                             contadorNo++;
                                         }

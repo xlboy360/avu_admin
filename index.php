@@ -21,7 +21,6 @@
             <div class="wrap-login">
                 <form class="login-form validate-form" id="form-login" action="" method="post">
                     <img src="./img/LOGOS VECTOR_CONECTA.png" alt="" width="300">
-                    <h3 class="h4 text-center">Administrador</h3>
                     <div class="wrap-input100" data-validate="Usuario incorrecto">
                         <input class="input100" type="text" id="usuario" name="usuario" placeholder="Usuario">
                         <span class="focus-efecto"></span>
@@ -36,13 +35,6 @@
                         <div class="wrap-login-form-btn">
                             <div class="login-form-bgbtn"></div>
                             <button type="submit" name="submit" class="login-form-btn">Ingresar</button>
-                        </div>
-                    </div>
-                    <!-- Codigo importante no borrar -->
-                    <div class="container-login-form-btn">
-                        <div class="wrap-login-form-btn">
-                            <div class="login-form-bgbtn2"></div>
-                            <a href="./vistas/log-in-coordinador.php" id="coord-btn">Coordinador</a>
                         </div>
                     </div>
 

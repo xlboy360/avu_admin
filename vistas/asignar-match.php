@@ -30,18 +30,18 @@ if ($_SESSION["s_usuario"] === "null") {
         <!--Graficas-->
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                <canvas id="activacion1" width="250px" heigh="350px"></canvas>
+                <canvas id="Pepsico" width="250px" heigh="350px"></canvas>
             </div>
             <div class="col-md-auto">
-                <canvas id="activacion2" width="250px" heigh="350px"></canvas>
+                <canvas id="Enel" width="250px" heigh="350px"></canvas>
             </div>
-            <div class="col-md-auto">
+            <!--<div class="col-md-auto">
                 <canvas id="activacion3" width="250px" heigh="350px"></canvas>
-            </div>
+            </div>-->
         </div>
         <br>
 
-        <!-- Código para gráficas de pie -->
+        <!-- Código para gráficas de pie pepsico -->
         <script>
             function cargarDatosGraficaActivacion1() {
                 $.ajax({
@@ -53,7 +53,7 @@ if ($_SESSION["s_usuario"] === "null") {
                     var contadorNo = 0;
 
                     var dataContenido = JSON.parse(resp);
-
+                    //var dataContenido = resp;
                     var titulos1 = []
                     titulos1[0] = "Asignados"
                     titulos1[1] = "No asignados"
@@ -62,16 +62,13 @@ if ($_SESSION["s_usuario"] === "null") {
 
                     // For para recorrer los elementos de la tabala
                     for (var i = 0; i < dataContenido.length; i++) {
-                        if (dataContenido[i][0] != 0 && dataContenido[i][0] != null) {
-                            contadorSi++;
-                        } else {
-                            contadorNo++;
-                        }
+                        contadorSi++;        
+
                     }
                     datos[0] = contadorSi
-                    datos[1] = contadorNo
+                    datos[1] = 105-contadorSi
                     // Función para crear el gráfico
-                    CrearGrafico('pie', titulos1, datos, 'activacion1')
+                    CrearGrafico('pie', titulos1, datos, 'Pepsico')
                 })
             }
 
@@ -94,22 +91,18 @@ if ($_SESSION["s_usuario"] === "null") {
 
                     // For para recorrer los elementos de la tabala
                     for (var i = 0; i < dataContenido.length; i++) {
-                        if (dataContenido[i][0] != 0 && dataContenido[i][0] != null) {
                             contadorSi++;
-                        } else {
-                            contadorNo++;
-                        }
                     }
 
                     datos[0] = contadorSi
-                    datos[1] = contadorNo
+                    datos[1] = 50-contadorSi
 
                     // Función para crear el gráfico
-                    CrearGrafico('pie', titulos1, datos, 'activacion2')
+                    CrearGrafico('pie', titulos1, datos, 'Enel')
                 })
             }
 
-            function cargarDatosGraficaActivacion3() {
+            /*function cargarDatosGraficaActivacion3() {
                 $.ajax({
                     url: '../bd/controlador_grafico_pie3.php',
                     type: 'POST'
@@ -142,7 +135,7 @@ if ($_SESSION["s_usuario"] === "null") {
                     // Función para crear el gráfico
                     CrearGrafico('pie', titulos1, datos, 'activacion3')
                 })
-            }
+            }*/
 
             function CrearGrafico(tipo, titulo, datos, id) {
                 var ctx = document.getElementById(id).getContext('2d');
@@ -187,10 +180,9 @@ if ($_SESSION["s_usuario"] === "null") {
                 <table id="example" class="table table-light table-striped table-bordered table-hover" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Mayor</th>
-                            <th>Horario</th>
-                            <th>User</th>
-                            <th>User email</th>
+                            <th>ID usuario</th>
+                            <th>Nombre usuario</th>
+                            <th>Email usuario</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -198,12 +190,11 @@ if ($_SESSION["s_usuario"] === "null") {
                         require_once '../bd/conexion.php';
                         $con = new Conexion();
                         $con->Conectar();
-                        $res = mysqli_query($con->conexion, "SELECT A.nombre, A.horario, B.name, B.email from mayors A INNER JOIN users B on A.user_id = B.id");
+                        $res = mysqli_query($con->conexion, "SELECT A.id, A.name, A.email from users as A WHERE NOT EXISTS(SELECT NULL FROM mayors as B WHERE B.user_id = A.id)");
                         while ($rec = mysqli_fetch_array($res)) {
                             echo 
                             '<tr class="text-center">
-                                <td>' . $rec["nombre"] . '</td>
-                                <td>' . $rec["horario"] . '</td>
+                                <td>' . $rec["id"] . '</td>
                                 <td>' . $rec["name"] . '</td>
                                 <td>' . $rec["email"] . '</td>
                             </tr>';
@@ -214,6 +205,7 @@ if ($_SESSION["s_usuario"] === "null") {
                 </table>
             </div>
         </div>
+
 
     </div>
 </body>
@@ -227,9 +219,44 @@ if ($_SESSION["s_usuario"] === "null") {
 <script>
     cargarDatosGraficaActivacion1();
     cargarDatosGraficaActivacion2();
-    cargarDatosGraficaActivacion3();
+    //cargarDatosGraficaActivacion3();
 </script>
 
 <script src="../popper/popper.min.js"></script>
 <script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="js/funcion.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            language: {
+                processing: "Tratamiento en curso...",
+                search: "Buscar&nbsp;:",
+                lengthMenu: "Agrupar de _MENU_ items",
+                info: "Mostrando del registro _START_ al _END_ de un total de _TOTAL_ registros",
+                infoEmpty: "No existen datos.",
+                infoFiltered: "(filtrado de _MAX_ elementos en total)",
+                infoPostFix: "",
+                loadingRecords: "Cargando...",
+                zeroRecords: "No se encontraron datos con tu busqueda",
+                emptyTable: "No hay datos disponibles en la tabla.",
+                paginate: {
+                    first: "Primero",
+                    previous: "Anterior",
+                    next: "Siguiente",
+                    last: "Ultimo"
+                },
+                aria: {
+                    sortAscending: ": active para ordenar la columna en orden ascendente",
+                    sortDescending: ": active para ordenar la columna en orden descendente"
+                }
+            },
+            //Tamaño del scroll vertical
+            scrollY: 500,
+            //Cambia las las opciones de la tabla
+            lengthMenu: [
+                [10, 20, 40, 80, 160, -1],
+                [10, 20, 40, 80, 160, "All"]
+            ],
+        });
+    });
+</script>

@@ -57,22 +57,15 @@ if ($_SESSION["s_usuario"] === null) {
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="asignar-match.php">
-                    <i class="fas fa-user-plus fa-chart-area"></i>
-                    <span>Asignar match</span></a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="agregar-coord.php">
-                    <i class="fas fa-plus-circle fa-chart-area"></i>
-                    <span>Agregar coordinador</span></a>
+                    <i class="fas fa-bezier-curve"></i>
+                    <span>Matches</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="agregar-admin.php">
-                    <i class="fas fa-plus-circle fa-chart-area"></i>
-                    <span>Agregar administrador</span></a>
+                    <i class="fas fa-user-plus fa-chart-area"></i>
+                    <span>Agregar usuario</span></a>
             </li>
 
         </ul>

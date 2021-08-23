@@ -14,7 +14,7 @@ if ($_SESSION["s_usuario"] === "null") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar un coordinador</title>
+    <title>Agregar un usuario</title>
 
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../bootstrap/datatables/dataTables.bootstrap4.min.css">
@@ -28,23 +28,23 @@ if ($_SESSION["s_usuario"] === "null") {
             <div class="col-md-auto">
                 <form class="formulario-agregar-admin" id="formulario-agregar-admin" method="POST">
                     <div class="form-group">
-                        <span class="titulo-formulario">Agregar administrador</span>
+                        <span class="titulo-formulario">Agregar usuario</span>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Nombre del administrador</label>
+                        <label for="nombre">Nombre del usuario</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="usuario">Usuario del administrador</label>
-                        <input type="text" class="form-control" id="usuario" name="usuario" aria-describedby="emailHelp">
+                        <label for="email">Email del usuario</label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="contrasena">Contraseña del administrador</label>
-                        <input type="password" class="form-control" id="contrasena" name="contrasena" aria-describedby="emailHelp">
+                        <label for="contrasena1">Contraseña</label>
+                        <input type="text" class="form-control" id="contrasena1" name="contrasena1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="contrasena1">Repetir contraseña</label>
-                        <input type="password" class="form-control" id="contrasena1" name="contrasena1" aria-describedby="emailHelp">
+                        <label for="contrasena2">Repetir contraseña</label>
+                        <input type="text" class="form-control" id="contrasena2" name="contrasena2" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group" style="text-align:center;">
                         <button id="agregar-btn" type="submit" class="btn btn-primary">Agregar</button>

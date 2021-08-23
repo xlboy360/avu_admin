@@ -1,4 +1,4 @@
-wa<?php 
+<?php 
     class Modelo_Grafico {
         private $conexion;
         function __construct()
@@ -9,7 +9,7 @@ wa<?php
         }
 
         function TraerDatosGraficoBar(){
-            $consulta = "SELECT R.id, R.actividad_id, realizo FROM llamadas as R INNER JOIN actividad as A ON A.id = R.id ORDER BY R.id ASC";
+            $consulta = "SELECT actividad_id, realizo FROM llamadas ORDER BY actividad_id ASC";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -32,7 +32,7 @@ wa<?php
         }
 
         function TraerDatosGraficoPieActivacion1(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 1";
+            $consulta = "SELECT A.user_id FROM mayors as A INNER JOIN users as B on B.id = A.user_id WHERE B.email LIKE 'pepsico%'";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
@@ -42,7 +42,7 @@ wa<?php
         }
 
         function TraerDatosGraficoPieActivacion2(){
-            $consulta = "SELECT M.ID_COORDINADOR FROM mtch AS M INNER JOIN voluntario AS V ON V.Id_voluntario = M.Id_voluntario WHERE V.Id_empresas = 2";
+            $consulta = "SELECT A.user_id FROM mayors as A INNER JOIN users as B on B.id = A.user_id WHERE B.email LIKE 'enel%'";
             $arreglo = array();
             if($consulta = $this->conexion->conexion->query($consulta)){ 
                 while($consulta_VU = mysqli_fetch_array($consulta))
